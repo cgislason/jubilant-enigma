@@ -1,0 +1,18 @@
+type: http_request
+model: http_request
+id: rq_UKtPH77PPM
+createdAt: 2025-11-01T22:31:01.546353
+updatedAt: 2025-11-01T22:31:24.999293
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_g2xE4hUeaR
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: Account by ID
+sortPriority: -1762036193725.999
+url: ${[ BASE_URL ]}/accounts/1
+urlParameters: []

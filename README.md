@@ -45,3 +45,7 @@ This API provides 3 endpoints:
 | `POST /accounts`.    | Create a new account     |
 | `GET /accounts/:id`  | Fetch an account by id   |
 | `POST /transactions` | Create a new transaction |
+
+### Yaak
+
+This project contains a workspace for the [Yaak](https://yaak.app/) API Client app. You can open `./yaak` in the app to test API requests

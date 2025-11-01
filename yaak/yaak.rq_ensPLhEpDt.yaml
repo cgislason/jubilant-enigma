@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_ensPLhEpDt
+createdAt: 2025-11-01T22:30:11.466055
+updatedAt: 2025-11-01T22:31:17.394396
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_g2xE4hUeaR
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "id": "uuid.v7()",
+      "name": "test",
+      "balance": 0,
+      "direction": "debit"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: AGRsmrsRPb
+method: POST
+name: Create Account
+sortPriority: -1762036193725.999
+url: ${[ BASE_URL ]}/accounts
+urlParameters: []

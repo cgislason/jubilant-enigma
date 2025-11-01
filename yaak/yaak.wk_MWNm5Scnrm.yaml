@@ -1,0 +1,14 @@
+type: workspace
+model: workspace
+id: wk_MWNm5Scnrm
+createdAt: 2025-11-01T22:26:34.511025
+updatedAt: 2025-11-01T22:26:34.511026
+authentication: {}
+authenticationType: null
+description: ''
+headers: []
+name: conduit-ledger
+encryptionKeyChallenge: null
+settingValidateCertificates: true
+settingFollowRedirects: true
+settingRequestTimeout: 0
