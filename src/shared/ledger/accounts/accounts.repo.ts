@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { AccountDto } from './account.dto';
+import { Account } from './account.entity';
 
 export class AccountConflictError extends Error {}
 
 // Store accounts indexed by id
-type AccountStorage = Record<string, AccountDto>;
+type AccountStorage = Record<string, Account>;
 
 // In-memory storage for Accounts
 const accounts: AccountStorage = {};
@@ -22,7 +22,7 @@ export const __test_accounts__ = {
 
 @Injectable()
 export class AccountsRepo {
-  createAccount(account: AccountDto) {
+  createAccount(account: Account) {
     // Save an immutable copy to prevent unexpected modifications to the datastore.
     // A shallow freeze is sufficient for accounts.
     const newAccount = Object.freeze({ ...account });
@@ -30,11 +30,11 @@ export class AccountsRepo {
     return newAccount;
   }
 
-  getAccount(id: string): AccountDto {
+  findById(id: string): Account {
     return accounts[id];
   }
 
-  getAccounts(): AccountDto[] {
+  findAll(): Account[] {
     return Object.values(accounts);
   }
 }

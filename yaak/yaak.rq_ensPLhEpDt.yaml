@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_ensPLhEpDt
 createdAt: 2025-11-01T22:30:11.466055
-updatedAt: 2025-11-01T23:19:47.449496
+updatedAt: 2025-11-02T22:52:06.913954
 workspaceId: wk_MWNm5Scnrm
 folderId: fl_g2xE4hUeaR
 authentication: {}
@@ -12,7 +12,7 @@ body:
     {
       "id": "${[ uuid.v7() ]}",
       "name": "${[ faker.finance.accountName() ]}",
-      "balance": 0,
+      "balance": ${[ faker.finance.amount() ]},
       "direction": "debit"
     }
 bodyType: application/json

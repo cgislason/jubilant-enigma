@@ -1,17 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { Direction } from '../../shared/enum/direction.enum';
+import { __test_accounts__ } from '../../shared/ledger/accounts/accounts.repo';
 import { AccountsController } from './accounts.controller';
-import { randomUUID } from 'crypto';
 import { AccountsModule } from './accounts.module';
-import { __test_accounts__ } from './accounts.repo';
-import { AccountDto, Direction } from './account.dto';
+import { CreateAccountDto } from './dto/create-account.dto';
+import { LedgerModule } from '../../shared/ledger/ledger.module';
 
 describe('AccountsController', () => {
   let controller: AccountsController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [AccountsModule],
-      controllers: [],
+      imports: [AccountsModule, LedgerModule],
     }).compile();
 
     controller = module.get<AccountsController>(AccountsController);
@@ -42,7 +42,7 @@ describe('AccountsController', () => {
 
   describe('GET /accounts', () => {
     const subject = () => controller.findAll();
-    const testAccounts: AccountDto[] = [
+    const testAccounts: CreateAccountDto[] = [
       {
         id: crypto.randomUUID(),
         name: 'test debit account',
@@ -72,7 +72,7 @@ describe('AccountsController', () => {
 
   describe('GET /accounts/:id', () => {
     const subject = (id: string) => controller.find({ id });
-    const testAccount: AccountDto = {
+    const testAccount: CreateAccountDto = {
       id: crypto.randomUUID(),
       name: 'test debit account',
       balance: 0,

@@ -1,10 +1,7 @@
-import { IsEnum, IsNotEmpty, IsString, IsNumber } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { Direction } from '../../../shared/enum/direction.enum';
 
-export enum Direction {
-  'debit' = 'debit',
-  'credit' = 'credit',
-}
-export class AccountDto {
+export class CreateAccountDto {
   @IsString()
   @IsNotEmpty()
   id: string;
