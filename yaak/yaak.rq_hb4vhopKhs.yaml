@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_hb4vhopKhs
+createdAt: 2025-11-02T23:23:09.915166
+updatedAt: 2025-11-02T23:23:49.295620
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_jQr7GkiT3P
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "id": "test-credit",
+      "name": "Test Credit",
+      "balance": 0,
+      "direction": "credit"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: AGRsmrsRPb
+method: POST
+name: Create Credit Account
+sortPriority: 0.0011
+url: ${[ BASE_URL ]}/accounts
+urlParameters: []

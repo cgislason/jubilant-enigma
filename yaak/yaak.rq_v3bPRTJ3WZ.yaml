@@ -1,0 +1,29 @@
+type: http_request
+model: http_request
+id: rq_v3bPRTJ3WZ
+createdAt: 2025-11-02T23:22:23.631961
+updatedAt: 2025-11-02T23:24:03.068629
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_jQr7GkiT3P
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "id": "test-debit",
+      "name": "Test Debit",
+      "balance": 0,
+      "direction": "debit"
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: AGRsmrsRPb
+method: POST
+name: Create Debit Account
+sortPriority: 0.0
+url: ${[ BASE_URL ]}/accounts
+urlParameters: []

@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { Transaction } from './transactions/transaction.entity';
 
 @Injectable()
 export class LedgerService {
@@ -6,7 +7,7 @@ export class LedgerService {
 
   constructor() {}
 
-  postTransaction() {
-    this.logger.log('Posting a transaction');
+  postTransaction(transaction: Transaction) {
+    this.logger.log('Posting a transaction', transaction);
   }
 }

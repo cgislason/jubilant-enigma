@@ -1,0 +1,30 @@
+type: http_request
+model: http_request
+id: rq_EXZHitzg4K
+createdAt: 2025-11-02T23:19:31.334213
+updatedAt: 2025-11-02T23:25:21.370582
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_jQr7GkiT3P
+authentication: {}
+authenticationType: null
+body:
+  text: |-
+    {
+      "id": "${[ uuid.v7() ]}",
+      "entries": [
+        { "direction": "credit", "amount": 100, "account_id": "test-credit" },
+        { "direction": "debit", "amount": 100, "account_id": "test-debit" }
+      ]
+    }
+bodyType: application/json
+description: ''
+headers:
+- enabled: true
+  name: Content-Type
+  value: application/json
+  id: 4ge9J6iAMf
+method: POST
+name: Post Transaction
+sortPriority: 1000.0
+url: ${[ BASE_URL ]}/transactions
+urlParameters: []
