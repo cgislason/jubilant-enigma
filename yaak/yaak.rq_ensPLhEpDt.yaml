@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_ensPLhEpDt
 createdAt: 2025-11-01T22:30:11.466055
-updatedAt: 2025-11-01T22:31:17.394396
+updatedAt: 2025-11-01T23:19:47.449496
 workspaceId: wk_MWNm5Scnrm
 folderId: fl_g2xE4hUeaR
 authentication: {}
@@ -10,8 +10,8 @@ authenticationType: null
 body:
   text: |-
     {
-      "id": "uuid.v7()",
-      "name": "test",
+      "id": "${[ uuid.v7() ]}",
+      "name": "${[ faker.finance.accountName() ]}",
       "balance": 0,
       "direction": "debit"
     }
@@ -24,6 +24,6 @@ headers:
   id: AGRsmrsRPb
 method: POST
 name: Create Account
-sortPriority: -1762036193725.999
+sortPriority: 0.0
 url: ${[ BASE_URL ]}/accounts
 urlParameters: []

@@ -2,7 +2,7 @@ type: http_request
 model: http_request
 id: rq_UKtPH77PPM
 createdAt: 2025-11-01T22:31:01.546353
-updatedAt: 2025-11-01T22:31:24.999293
+updatedAt: 2025-11-01T23:18:34.877714
 workspaceId: wk_MWNm5Scnrm
 folderId: fl_g2xE4hUeaR
 authentication: {}
@@ -13,6 +13,6 @@ description: ''
 headers: []
 method: GET
 name: Account by ID
-sortPriority: -1762036193725.999
-url: ${[ BASE_URL ]}/accounts/1
+sortPriority: 333.3333333333333
+url: ${[ BASE_URL ]}/accounts/${[ response.body.path(request='rq_ensPLhEpDt', path=b64'JC5pZA', behavior='smart') ]}
 urlParameters: []

@@ -3,7 +3,7 @@ model: environment
 id: ev_h9RD67zJfL
 workspaceId: wk_MWNm5Scnrm
 createdAt: 2025-11-01T22:29:32.215475
-updatedAt: 2025-11-01T23:02:20.793850
+updatedAt: 2025-11-01T23:11:46.761235
 name: Localhost
 public: true
 base: false
@@ -12,6 +12,6 @@ parentId: ev_eHJxnor7mo
 variables:
 - enabled: true
   name: BASE_URL
-  value: http://localhost:5000
+  value: http://localhost:3000
   id: 3KzCPsNFp6
 color: null
