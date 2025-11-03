@@ -1,10 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { TransactionEntry } from '../transactions/transaction.entity';
 import { Account } from './account.entity';
 import { AccountsRepo } from './accounts.repo';
-import {
-  Transaction,
-  TransactionEntry,
-} from '../transactions/transaction.entity';
 
 @Injectable()
 export class AccountsService {
@@ -25,10 +22,20 @@ export class AccountsService {
   }
 
   addEntryToAccount(transactionEntry: TransactionEntry) {
-    this.accountsRepo.updateBalance(
-      transactionEntry.account_id,
-      transactionEntry.amount,
-      transactionEntry.direction,
-    );
+    const account = this.accountsRepo.findById(transactionEntry.account_id);
+    if (!account) {
+      throw new Error(`Account ${transactionEntry.account_id} not found`);
+    }
+
+    const matchedDirections = account.direction === transactionEntry.direction;
+    const change = matchedDirections
+      ? transactionEntry.amount
+      : -transactionEntry.amount;
+    const newBalance = account.balance + change;
+
+    this.accountsRepo.updateAccount({
+      id: transactionEntry.account_id,
+      balance: newBalance,
+    });
   }
 }

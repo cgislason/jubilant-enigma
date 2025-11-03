@@ -41,19 +41,10 @@ export class AccountsRepo {
     return Object.values(accounts);
   }
 
-  updateBalance(account_id: string, amount: number, direction: Direction) {
-    const account = this.findById(account_id);
-    if (!account) {
-      throw new Error(`Account ${account_id} not found`);
-    }
-
-    const matchedDirections = account.direction === direction;
-    const change = matchedDirections ? amount : -amount;
-    const newBalance = account.balance + change;
-
+  updateAccount(account: Partial<Account> & { id: string }) {
     const updatedAccount = Object.freeze({
+      ...accounts[account.id],
       ...account,
-      balance: newBalance,
     });
     accounts[account.id] = updatedAccount;
     return updatedAccount;
