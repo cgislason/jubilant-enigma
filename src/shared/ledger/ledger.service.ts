@@ -1,4 +1,9 @@
-import { Injectable, Logger } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  Logger,
+  NotFoundException,
+} from '@nestjs/common';
 import {
   Transaction,
   TransactionEntry,
@@ -37,7 +42,9 @@ export class LedgerService {
       transaction.entries,
     );
     if (transactionBalance != 0) {
-      throw new Error('Transaction credits + debits must balance');
+      throw new BadRequestException(
+        'Transaction credits + debits must balance',
+      );
     }
 
     // Save the transaction, now that we know it's valid
@@ -55,7 +62,7 @@ export class LedgerService {
     return transaction.entries.reduce((prev, entry) => {
       const account = this.accountsService.findById(entry.account_id);
       if (!account) {
-        throw new Error(`Account ${entry.account_id} not found`);
+        throw new NotFoundException(`Account ${entry.account_id} not found`);
       }
       return {
         ...prev,

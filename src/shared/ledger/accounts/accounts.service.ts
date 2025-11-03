@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { TransactionEntry } from '../transactions/transaction.entity';
 import { Account } from './account.entity';
 import { AccountsRepo } from './accounts.repo';
@@ -24,7 +24,9 @@ export class AccountsService {
   addEntryToAccount(transactionEntry: TransactionEntry) {
     const account = this.accountsRepo.findById(transactionEntry.account_id);
     if (!account) {
-      throw new Error(`Account ${transactionEntry.account_id} not found`);
+      throw new NotFoundException(
+        `Account ${transactionEntry.account_id} not found`,
+      );
     }
 
     const matchedDirections = account.direction === transactionEntry.direction;
