@@ -7,7 +7,7 @@ import { TransactionsRepo } from './transactions/transactions.repo';
 @Module({
   imports: [],
   controllers: [],
-  providers: [AccountsService, AccountsRepo, TransactionsRepo, LedgerService],
+  providers: [AccountsRepo, AccountsService, TransactionsRepo, LedgerService],
   exports: [AccountsService, LedgerService],
 })
 export class LedgerModule {}

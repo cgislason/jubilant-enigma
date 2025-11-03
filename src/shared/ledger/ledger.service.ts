@@ -17,10 +17,11 @@ export class LedgerService {
     private readonly transactionsRepo: TransactionsRepo,
   ) {}
 
+  // Note: These should live in a TransactionsService, but
+  // for the sake of simplicity I'm leaving them here
   findTransactionById(id: string) {
     return this.transactionsRepo.findById(id);
   }
-
   findAllTransactions() {
     return this.transactionsRepo.findAll();
   }
@@ -42,7 +43,10 @@ export class LedgerService {
     // Save the transaction, now that we know it's valid
     const result = this.transactionsRepo.createTransaction(transaction);
 
-    // TODO: update account balances and add lines to each account
+    // Update account balances and add lines to each account
+    transaction.entries.forEach((entry) => {
+      this.accountsService.addEntryToAccount(entry);
+    });
 
     return result;
   }
@@ -67,6 +71,7 @@ export class LedgerService {
     const debitSum = entries
       .filter((entry) => entry.direction === Direction.debit)
       .reduce((sum, entry) => sum + entry.amount, 0);
+
     return creditSum - debitSum;
   }
 }

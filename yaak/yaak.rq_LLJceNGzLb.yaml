@@ -2,9 +2,9 @@ type: http_request
 model: http_request
 id: rq_LLJceNGzLb
 createdAt: 2025-11-03T02:57:04.752664
-updatedAt: 2025-11-03T02:57:39.565192
+updatedAt: 2025-11-03T04:04:04.367951
 workspaceId: wk_MWNm5Scnrm
-folderId: fl_jQr7GkiT3P
+folderId: fl_HXsxNaPUgF
 authentication: {}
 authenticationType: null
 body:
@@ -21,6 +21,6 @@ description: ''
 headers: []
 method: GET
 name: Get Transaction
-sortPriority: 1000.0011
+sortPriority: 3000.0
 url: ${[ BASE_URL ]}/transactions/${[ response.body.path(request='rq_EXZHitzg4K', path=b64'JC5pZA', behavior='smart') ]}
 urlParameters: []

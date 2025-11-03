@@ -33,7 +33,7 @@ export class TransactionsRepo {
   }
 
   findById(id: string): Transaction | undefined {
-    return transactions.find((tx) => tx.id === id);
+    return transactions.find((transaction) => transaction.id === id);
   }
 
   findAll(): Transaction[] {

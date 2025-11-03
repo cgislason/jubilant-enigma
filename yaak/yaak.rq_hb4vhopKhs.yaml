@@ -2,9 +2,9 @@ type: http_request
 model: http_request
 id: rq_hb4vhopKhs
 createdAt: 2025-11-02T23:23:09.915166
-updatedAt: 2025-11-02T23:23:49.295620
+updatedAt: 2025-11-03T04:04:04.364688
 workspaceId: wk_MWNm5Scnrm
-folderId: fl_jQr7GkiT3P
+folderId: fl_HXsxNaPUgF
 authentication: {}
 authenticationType: null
 body:
@@ -24,6 +24,6 @@ headers:
   id: AGRsmrsRPb
 method: POST
 name: Create Credit Account
-sortPriority: 0.0011
+sortPriority: 1000.0
 url: ${[ BASE_URL ]}/accounts
 urlParameters: []

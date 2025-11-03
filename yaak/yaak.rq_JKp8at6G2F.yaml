@@ -1,0 +1,18 @@
+type: http_request
+model: http_request
+id: rq_JKp8at6G2F
+createdAt: 2025-11-03T03:47:34.952892
+updatedAt: 2025-11-03T04:05:24.693843
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_HXsxNaPUgF
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: Get Credit Test Account
+sortPriority: 5000.0
+url: ${[ BASE_URL ]}/accounts/test-credit
+urlParameters: []

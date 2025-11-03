@@ -1,10 +1,10 @@
 type: http_request
 model: http_request
-id: rq_X2kNyDDnWG
-createdAt: 2025-11-03T03:04:15.614722
-updatedAt: 2025-11-03T04:04:04.369244
+id: rq_e6X8LgU7Pc
+createdAt: 2025-11-03T04:04:22.852290
+updatedAt: 2025-11-03T04:04:29.542408
 workspaceId: wk_MWNm5Scnrm
-folderId: fl_HXsxNaPUgF
+folderId: fl_jQr7GkiT3P
 authentication: {}
 authenticationType: null
 body:
@@ -20,7 +20,7 @@ bodyType: null
 description: ''
 headers: []
 method: GET
-name: List Transactions
-sortPriority: 4000.0
-url: ${[ BASE_URL ]}/transactions
+name: Get Transaction
+sortPriority: 1000.0
+url: ${[ BASE_URL ]}/transactions/${[ response.body.path(request='rq_EXZHitzg4K', path=b64'JC5pZA', behavior='smart') ]}
 urlParameters: []

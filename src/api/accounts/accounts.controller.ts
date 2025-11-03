@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Logger,
+  NotFoundException,
+  Param,
+  Post,
+} from '@nestjs/common';
 import { AccountsService } from '../../shared/ledger/accounts/accounts.service';
 import { CreateAccountDto } from './dto/create-account.dto';
 
@@ -15,7 +23,11 @@ export class AccountsController {
 
   @Get(':id')
   find(@Param() params: { id: string }) {
-    return this.accountsService.findById(params.id);
+    const account = this.accountsService.findById(params.id);
+    if (!account) {
+      throw new NotFoundException(`Account ${params.id} not found`);
+    }
+    return account;
   }
 
   @Post()

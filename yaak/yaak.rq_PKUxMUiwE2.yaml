@@ -1,0 +1,18 @@
+type: http_request
+model: http_request
+id: rq_PKUxMUiwE2
+createdAt: 2025-11-03T03:48:49.077883
+updatedAt: 2025-11-03T03:49:01.800634
+workspaceId: wk_MWNm5Scnrm
+folderId: fl_g2xE4hUeaR
+authentication: {}
+authenticationType: null
+body: {}
+bodyType: null
+description: ''
+headers: []
+method: GET
+name: Account by ID - Unknown
+sortPriority: 333.3346333333332
+url: ${[ BASE_URL ]}/accounts/bad-id-that-does-not-exist
+urlParameters: []

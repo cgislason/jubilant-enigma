@@ -21,7 +21,7 @@ describe('LedgerService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [LedgerModule],
+      imports: [LedgerModule, Account],
     }).compile();
 
     service = module.get<LedgerService>(LedgerService);
@@ -60,6 +60,50 @@ describe('LedgerService', () => {
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+  });
+
+  describe('fetchAccounts', () => {
+    const subject = (transaction: Transaction) =>
+      service.postTransaction(transaction);
+
+    it('should update the account balances correctly', () => {
+      const transaction: Transaction = {
+        id: crypto.randomUUID(),
+        entries: [
+          {
+            direction: Direction.credit,
+            amount: 50,
+            account_id: credit_account1.id,
+          },
+          {
+            direction: Direction.debit,
+            amount: 100,
+            account_id: credit_account2.id,
+          },
+          {
+            direction: Direction.credit,
+            amount: 100,
+            account_id: debit_account1.id,
+          },
+          {
+            direction: Direction.debit,
+            amount: 50,
+            account_id: debit_account2.id,
+          },
+        ],
+      };
+      subject(transaction);
+
+      // Look up the accounts again because account objects are immutable.
+      const account1 = accountsService.findById(credit_account1.id);
+      expect(account1?.balance).toEqual(50);
+      const account2 = accountsService.findById(credit_account2.id);
+      expect(account2?.balance).toEqual(-100);
+      const account3 = accountsService.findById(debit_account1.id);
+      expect(account3?.balance).toEqual(-100);
+      const account4 = accountsService.findById(debit_account2.id);
+      expect(account4?.balance).toEqual(50);
+    });
   });
 
   describe('fetchAccounts', () => {

@@ -1,6 +1,10 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Account } from './account.entity';
 import { AccountsRepo } from './accounts.repo';
+import {
+  Transaction,
+  TransactionEntry,
+} from '../transactions/transaction.entity';
 
 @Injectable()
 export class AccountsService {
@@ -18,5 +22,13 @@ export class AccountsService {
 
   createAccount(account: Account) {
     return this.accountsRepo.createAccount(account);
+  }
+
+  addEntryToAccount(transactionEntry: TransactionEntry) {
+    this.accountsRepo.updateBalance(
+      transactionEntry.account_id,
+      transactionEntry.amount,
+      transactionEntry.direction,
+    );
   }
 }

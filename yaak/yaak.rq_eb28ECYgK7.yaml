@@ -1,10 +1,10 @@
 type: http_request
 model: http_request
-id: rq_EXZHitzg4K
-createdAt: 2025-11-02T23:19:31.334213
-updatedAt: 2025-11-03T04:05:55.978427
+id: rq_eb28ECYgK7
+createdAt: 2025-11-03T04:04:18.174877
+updatedAt: 2025-11-03T04:04:29.538398
 workspaceId: wk_MWNm5Scnrm
-folderId: fl_HXsxNaPUgF
+folderId: fl_jQr7GkiT3P
 authentication: {}
 authenticationType: null
 body:
@@ -12,8 +12,8 @@ body:
     {
       "id": "${[ uuid.v7() ]}",
       "entries": [
-        { "direction": "credit", "amount": 45, "account_id": "test-credit" },
-        { "direction": "debit", "amount": 45, "account_id": "test-debit" }
+        { "direction": "credit", "amount": 100, "account_id": "test-credit" },
+        { "direction": "debit", "amount": 100, "account_id": "test-debit" }
       ]
     }
 bodyType: application/json
@@ -25,6 +25,6 @@ headers:
   id: 4ge9J6iAMf
 method: POST
 name: Post Transaction
-sortPriority: 2000.0001
+sortPriority: 0.0
 url: ${[ BASE_URL ]}/transactions
 urlParameters: []
