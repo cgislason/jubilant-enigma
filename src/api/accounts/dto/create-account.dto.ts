@@ -1,4 +1,10 @@
-import { IsEnum, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import {
+  IsEnum,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 import { Direction } from '../../../shared/enum/direction.enum';
 
 export class CreateAccountDto {
@@ -7,7 +13,8 @@ export class CreateAccountDto {
   id!: string;
 
   @IsString()
-  name!: string;
+  @IsOptional()
+  name?: string;
 
   @IsNumber()
   balance!: number;
