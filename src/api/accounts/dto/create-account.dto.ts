@@ -1,7 +1,7 @@
 import {
   IsEnum,
+  IsInt,
   IsNotEmpty,
-  IsNumber,
   IsOptional,
   IsString,
 } from 'class-validator';
@@ -16,7 +16,7 @@ export class CreateAccountDto {
   @IsOptional()
   name?: string;
 
-  @IsNumber()
+  @IsInt()
   balance!: number;
 
   @IsEnum(Direction)
