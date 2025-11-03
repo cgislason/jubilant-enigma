@@ -4,15 +4,15 @@ import { Direction } from '../../../shared/enum/direction.enum';
 export class CreateAccountDto {
   @IsString()
   @IsNotEmpty()
-  id: string;
+  id!: string;
 
   @IsString()
-  name: string;
+  name!: string;
 
   @IsNumber()
-  balance: number;
+  balance!: number;
 
   @IsEnum(Direction)
   @IsNotEmpty()
-  direction: Direction;
+  direction!: Direction;
 }

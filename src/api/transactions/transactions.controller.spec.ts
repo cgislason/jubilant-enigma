@@ -22,9 +22,9 @@ describe('AccountsController', () => {
   describe('POST /transactions', () => {
     const subject = (body) => controller.create(body);
 
-    afterEach(() => {
-      //TODO: __test_transactions__.clearTransactions();
-    });
+    // afterEach(() => {
+    //   //TODO: __test_transactions__.clearTransactions();
+    // });
 
     // it('should create a transaction', () => {
     //   const body = {

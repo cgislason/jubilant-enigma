@@ -22,7 +22,7 @@ export const __test_accounts__ = {
 
 @Injectable()
 export class AccountsRepo {
-  createAccount(account: Account) {
+  createAccount(account: Account): Account {
     // Save an immutable copy to prevent unexpected modifications to the datastore.
     // A shallow freeze is sufficient for accounts.
     const newAccount = Object.freeze({ ...account });
@@ -30,8 +30,9 @@ export class AccountsRepo {
     return newAccount;
   }
 
-  findById(id: string): Account {
-    return accounts[id];
+  findById(id: string): Account | undefined {
+    const test = accounts[id];
+    return test;
   }
 
   findAll(): Account[] {

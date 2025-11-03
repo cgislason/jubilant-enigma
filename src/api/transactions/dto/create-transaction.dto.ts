@@ -11,14 +11,14 @@ import { Optional } from '@nestjs/common';
 export class CreateTransactionEntryDto {
   @IsEnum(Direction)
   @IsNotEmpty()
-  direction: Direction;
+  direction!: Direction;
 
   @IsNumber()
-  amount: number;
+  amount!: number;
 
   @IsString()
   @IsNotEmpty()
-  account_id: string;
+  account_id!: string;
 }
 
 export class CreateTransactionDto {
@@ -27,5 +27,5 @@ export class CreateTransactionDto {
   id: string = crypto.randomUUID();
 
   @IsArray()
-  entries: CreateTransactionEntryDto[];
+  entries!: CreateTransactionEntryDto[];
 }
