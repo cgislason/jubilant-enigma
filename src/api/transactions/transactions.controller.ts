@@ -13,4 +13,14 @@ export class TransactionsController {
     this.logger.log('Creating new Transaction', { body });
     return this.ledgerService.postTransaction(body);
   }
+
+  @Get()
+  findAll() {
+    return this.ledgerService.findAllTransactions();
+  }
+
+  @Get(':id')
+  find(@Param() params: { id: string }) {
+    return this.ledgerService.findTransactionById(params.id);
+  }
 }

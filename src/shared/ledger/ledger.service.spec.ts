@@ -112,9 +112,9 @@ describe('LedgerService', () => {
     });
   });
 
-  describe('calculateBalance', () => {
+  describe('calculateTransactionBalance', () => {
     const subject = (transactionEntries: TransactionEntry[]) =>
-      service['calculateBalance'](transactionEntries);
+      service['calculateTransactionBalance'](transactionEntries);
 
     it('should return 0 when credits balance, no debits', () => {
       const entries: TransactionEntry[] = [
