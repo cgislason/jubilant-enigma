@@ -21,11 +21,11 @@ export class AccountsController {
     return this.accountsService.findAll();
   }
 
-  @Get(':id')
-  find(@Param() params: { id: string }) {
-    const account = this.accountsService.findById(params.id);
+  @Get(':accountId')
+  find(@Param('accountId') accountId: string) {
+    const account = this.accountsService.findById(accountId);
     if (!account) {
-      throw new NotFoundException(`Account ${params.id} not found`);
+      throw new NotFoundException(`Account ${accountId} not found`);
     }
     return account;
   }

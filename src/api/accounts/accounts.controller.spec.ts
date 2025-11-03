@@ -71,7 +71,7 @@ describe('AccountsController', () => {
   });
 
   describe('GET /accounts/:id', () => {
-    const subject = (id: string) => controller.find({ id });
+    const subject = (id: string) => controller.find(id);
     const testAccount: CreateAccountDto = {
       id: crypto.randomUUID(),
       name: 'test debit account',
