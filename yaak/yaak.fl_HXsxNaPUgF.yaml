@@ -2,12 +2,12 @@ type: folder
 model: folder
 id: fl_HXsxNaPUgF
 createdAt: 2025-11-03T04:03:51.522730
-updatedAt: 2025-11-03T04:03:56.139005
+updatedAt: 2025-11-04T05:07:15.544837
 workspaceId: wk_MWNm5Scnrm
 folderId: null
 authentication: {}
 authenticationType: null
 description: ''
 headers: []
-name: Flow
+name: Flow (Run in order)
 sortPriority: 2000.0
